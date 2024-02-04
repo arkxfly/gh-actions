@@ -16,3 +16,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - uses: ./.github/workflows/workflow-B.yml
+        with:
+          config-path: 'aaa config path'
+        secrets:
+          token: 'abc123'
